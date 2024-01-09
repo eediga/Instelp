@@ -1,0 +1,66 @@
+<!-- 
+<ion-header>
+  <ion-navbar>
+    <ion-title>addDataFirebase</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content padding>
+
+  <form (ngSubmit)="RegisterForm()">
+
+      <ion-item>
+          <ion-label>choose Category</ion-label>
+          <ion-select [(ngModel)]="category" name="category" okText="Okay" cancelText="Dismiss">
+            <ion-option value="restaurant">restaurant</ion-option>
+            <ion-option value="grocery">grocery</ion-option>
+            <ion-option value="medicine">medicine</ion-option>
+            <ion-option value="stationary">stationary</ion-option>
+          </ion-select>
+        </ion-item>
+
+      <!-- <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input type="text" [(ngModel)]="restaurant.category" name="name"></ion-input>
+      </ion-item> -->
+    
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="restaurant.name" name="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>lattitude</ion-label>
+        <ion-input type="text" [(ngModel)]="restaurant.lattitude" name="emailid"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>longitude</ion-label>
+          <ion-input type="text" [(ngModel)]="restaurant.longitude" name="emailid"></ion-input>
+        </ion-item>
+    
+    <ion-item>
+      <ion-label floating>location</ion-label>
+      <ion-input type="text" [(ngModel)]="restaurant.location" name="emailid"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Rating</ion-label>
+      <ion-input type="number"[(ngModel)]="restaurant.rating" name="password"></ion-input>
+    </ion-item>
+
+    <h5> &nbsp;&nbsp;&nbsp; Upload photo:</h5>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Photo &nbsp;&nbsp;&nbsp;
+            <ion-icon name="camera" (click)="openCamera()"></ion-icon>
+            <img [src]="base64Image" style="width: 12%; height:12% "/>
+
+            <button ion-button name="camera" (click)="openGallary()">Gallary</button>
+    <ion-item>
+        <button ion-button class="login" color="bleu" type="submit" 
+        full (click)="addItem({name : restaurant.name,lattitude : restaurant.lattitude, longitude:restaurant.longitude,location:restaurant.location,
+        rating:restaurant.rating, photo:this.base64Image } )">Register</button>
+    </ion-item>
+  </form>
+
+</ion-content>

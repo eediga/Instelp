@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Driver
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-slides pager  (ionSlideDrag)="slideMoved()">
+    <ion-slide>
+      <div class="diag" style="background: url('assets/imgs/whitebg1.svg') no-repeat">
+        <ion-icon ios="ios-contact" md="md-contact" color="primary" [@bounce]='state' (@bounce.done)="animationDone($event)"></ion-icon> 
+      </div>
+      <br>
+      <br>
+      <br><br><br><br>
+      <br>
+      <br><br><br>
+      <div [@bounce]='state'>
+        <h1>Register</h1>
+        <h4>See yourself as a helping hand for people and earn money!!</h4>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="diag" style="background: url('assets/imgs/whitebg1.svg') no-repeat">
+        <ion-icon ios="ios-basket" md="md-basket" color="primary" [@bounce]='state'></ion-icon>
+      </div>
+      <br>
+      <br>
+      <br><br><br><br>
+      <br>
+      <br><br><br>
+      <div [@bounce]='state'>
+        <h1>Two Modules</h1>
+        <h4>we're giving you forgotten item's details OR cart details</h4>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="diag" style="background: url('assets/imgs/whitebg1.svg') no-repeat">
+        <ion-icon ios="ios-navigate" md="md-navigate" color="primary" [@bounce]='state'></ion-icon>
+      </div>
+      <br>
+      <br>
+      <br><br><br><br>
+      <br>
+      <br><br><br>
+      <div [@bounce]='state'>
+        <h1>Go Onilne</h1>
+        <h4>Start your day, follow the way !!</h4>
+      </div>
+    </ion-slide>
+
+  
+  </ion-slides>
+  <button (click)="skip()" id="skip">{{ skipMsg }}</button>
+</ion-content>

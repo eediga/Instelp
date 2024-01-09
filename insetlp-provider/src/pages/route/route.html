@@ -1,0 +1,50 @@
+<!--
+  Generated template for the RoutePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>route</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- <mat-card class="matc" *ngFor="let item of g.cart[0][0]">
+      <mat-card-title> {{item.placeName}}</mat-card-title>
+      <div #map id="map" style="height:400px"></div>  
+  </mat-card> -->
+  
+    <mat-card class="matc">
+        <mat-card-title> {{reference?.placeName}}</mat-card-title>
+        <div #map id="map" style="height:400px">
+        </div>
+          
+        <mat-card-content>
+       <ion-item>
+          <div style="font-size: 20px">Location :  {{reference?.placeLocation}} </div>
+       </ion-item>   
+       <ion-item *ngFor="let item of reference?.menu">
+          Product Name :  {{item.productName}}
+          <br>
+          Price : {{item.productPrice}}
+         <br>
+          Quantity : {{item.quantity}}
+        </ion-item>
+        <br><a href="{{urlString}}">Navigate</a>
+        <br>
+        <h5>{{text}}<p style="color:red">{{finalPrice}}</p></h5>
+
+    
+      <!-- <div> {{reference?.menu[0].productName}} </div>
+      <div> {{reference?.menu[0].productPrice}} </div>
+      <div> {{reference?.menu[0].quantity}} </div> -->
+
+        </mat-card-content>
+      </mat-card>
+
+<button ion-button (click)="nextButtonClick()">{{textforButton}}</button>
+  
+</ion-content>

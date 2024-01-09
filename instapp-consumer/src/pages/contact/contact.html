@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Subcategory
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+     <ion-item *ngFor="let item of items" >
+        <!-- <img src="{{item.value.photo}}"> -->
+      <mat-card (click)="displayMenu(item)">
+        
+          <mat-card-header>
+              <div mat-card-avatar style="width: 100px;height: 100px;">
+                  <img  src="{{item.value.photo}}">
+              </div>
+              
+              <mat-card-title >{{item.key}}</mat-card-title>
+              <mat-card-subtitle>{{item.value.location}}</mat-card-subtitle>
+              <br>
+              <mat-card-subtitle>
+                  <ionic3-star-rating 
+                  activeIcon = "ios-star"
+                  defaultIcon = "ios-star-outline"
+                  activeColor = "#DAA520" 
+                  defaultColor = "#f4f4f4"
+                  readonly="true"
+                  rating="{{item.value.rating}}">
+                </ionic3-star-rating>
+            </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+               
+            </mat-card-content>
+      </mat-card>
+      </ion-item>
+  </ion-list>
+</ion-content>

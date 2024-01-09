@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>CartDetails</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+
+    <!-- <mat-grid-list cols="4" rowHeight="100px">
+        <mat-grid-tile
+            *ngFor="let item of global.cart"
+            [colspan]="item.productName"
+            [rowspan]="item.productPrice"
+            [style.background]="item.color">
+          {{item.placeName}}
+        </mat-grid-tile>
+      </mat-grid-list> -->
+
+<ion-card style="width: 100%">
+  <ion-item *ngFor="let item of global.cart">
+      <h4><strong>{{item.placeName}}</strong></h4>
+      <ion-item *ngFor="let menu of item.menu" style="color:black">
+        <ion-row>
+          <ion-col>
+          <p>{{ menu.productName }}</p>
+        </ion-col>
+        <ion-col float-right text-right> 
+            
+          <button ion-button color="secondary" outline class="btn" (click)="incr(item,menu)" float-right>+</button>
+          <button ion-button color="secondary" outline class="btn" float-right>{{menu.quantity}}</button>
+          <button ion-button color="secondary" outline class="btn" (click)="decrement(item,menu)" float-right>-</button>
+          Rs. {{ menu.quantity  *  menu.productPrice }} &nbsp;&nbsp;&nbsp;
+        </ion-col>
+        <!-- <ion-col text-right>
+           
+        </ion-col> -->
+        </ion-row>
+      </ion-item>
+      
+  </ion-item >
+<div style="border: 0.5px solid black"></div>
+<br><br>
+    <h3>&nbsp;&nbsp;&nbsp;<strong>Bill Details</strong></h3>  
+    <ion-item >
+      <ion-row no-padding>
+        <ion-col>Item total </ion-col>
+        <ion-col text-right style="color:brown" >Rs. {{sum}}</ion-col>
+      </ion-row>
+
+      <ion-row no-padding>
+          <ion-col>Packaging Charges </ion-col>
+          <ion-col text-right>Rs. 10</ion-col>
+      </ion-row>
+      <ion-row no-padding>
+          <ion-col>Delievery Charges</ion-col>
+          <ion-col text-right>Rs. 30</ion-col>5
+      </ion-row>
+    </ion-item>
+</ion-card>    
+<div style="border: 0.5px solid black"></div>
+<br><br>
+<ion-row no-padding>
+    <ion-col>Amount Payable</ion-col>
+    <ion-col text-right style="color:brown" >Rs.{{finalTotal}}</ion-col>
+  </ion-row>
+<button ion-button (click)="LiveTrack()"> Live Track</button>  
+</ion-content>
+
+<!-- <ion-list>
+  <ion-item *ngFor="let item of global.cart">
+    {{item.placeName}}
+    {{item.productName}}
+    {{item.productPrice}}
+  </ion-item>
+</ion-list> -->
+<!-- <button ion-button (click)="getBillAmount()">getBill</button>
+<button ion-button (click)="FormMatrix()">POst Data</button>
+<button ion-button (click)="proccedToCheckout()">procced To Checkout</button>
+<button ion-button (click)="AddAdress()">Add Address</button>
+<div> {{sum}}</div> -->
+
+<!-- class="table table-hover table-condensed" -->

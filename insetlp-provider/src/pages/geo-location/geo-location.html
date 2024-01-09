@@ -1,0 +1,30 @@
+<!--
+  Generated template for the GeoLocationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>geoLocation</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button (click)="locate()">Get current Location</button>
+  <p>
+    {{data}}
+  </p>
+  
+  <ion-list>
+      <ion-item *ngFor="let item of items">
+        {{item.name}}
+        {{item.password}}
+        <img src="{{item.document}}">
+        <!-- <br</br1> -->
+        <button ion-button (click)="addTocart(item)">Add to cart</button>
+        </ion-item>
+    </ion-list>
+  
+  
+  </ion-content>

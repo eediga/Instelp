@@ -1,0 +1,29 @@
+
+
+<ion-content  padding >
+  <mat-card>
+  <ion-list>
+    <div class="imgg">
+    <img src="assets/imgs/deliverycartoon.png"  class="background"> 
+    </div>
+    
+    <ion-item style="color: cadetblue">
+      <ion-label floating style="color: cadetblue">Username</ion-label>
+      <ion-input type="text" [(ngModel)]="user.username"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating style="color: cadetblue">Password</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+  
+  </ion-list>
+          
+  <button  style="width: 49%; height: 50px; color: cadetblue" (click)="driverLogin()">Login</button>
+  <h5 *ngIf="status" style="color: red" >* Username or Password is incorrect</h5>
+  
+  <button  style="width: 49%; height: 50px; color:cadetblue" block  (click)="getMethod()">Sign Up</button>
+ <!-- <button ion-button (click)="geoLocation()">Geo Location</button> -->
+</mat-card>
+</ion-content>
+

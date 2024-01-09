@@ -1,0 +1,53 @@
+<ion-header >
+  <ion-navbar color="dark">
+    <ion-row style="color:white"> 
+      <ion-col>
+          Drop it
+      </ion-col>
+        <ion-col>
+            <button ion-button menuToggle float-right>
+                <ion-icon name="contact"></ion-icon>Sign Up
+            </button>
+            <button ion-button menuToggle float-right>
+                <ion-icon name="person"></ion-icon>
+                Login
+            </button>
+        </ion-col>
+      </ion-row>
+    </ion-navbar>
+  </ion-header>
+
+  
+
+<ion-content style="background-color: aliceblue" >
+<div >
+      <img src="../../assets/imgs/parcel.jpg" class="img" float-right>
+    <div class="center" style="color:black"><h1>Get Everything instantly within 30 mins</h1></div>
+</div>
+
+<div class="login"float-right>
+<div style="margin-left:5%;margin-right:5%" >
+  <!-- <ion-list style="margin-top:30%"> -->
+    <ion-list>
+    <!-- <img src="../../assets/imgs/logo.png" style="width: 80px;height: 80px; margin-left:40%;text-align: center; border-radius: 50%;"> -->
+    <br><br><br>
+    <ion-item class="ion-input">
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="user.username" style="color: white;"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item class="ion-input">
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password" style="color: white;"></ion-input>
+    </ion-item>
+  </ion-list>
+  <br>
+  <button mat-stroked-button style="color: white;width: 49%"(click)="getMethod()"  >Login</button>
+
+    <h5 *ngIf="status" style="color: red" >* Username or Password is incorrect</h5>
+  
+  <button mat-stroked-button style="color: white;width: 49%" block (click)="Navigate()" >Sign Up</button>
+  <br><br><br><br>
+</div>
+</div>
+</ion-content>

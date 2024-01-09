@@ -1,0 +1,80 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>DriverRegisterPage</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <form (ngSubmit)="RegisterForm()">
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="user.username" name="username"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Email ID</ion-label>
+      <ion-input type="text" [(ngModel)]="user.emailid" name="emailid"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password"[(ngModel)]="user.password" name="password" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Confirm Password</ion-label>
+      <ion-input type="password" [(ngModel)]="user.ConfirmPassword" name="Confirmpassword"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Phone Number</ion-label>
+      <ion-input type="Number" [(ngModel)]="user.phoneNumber" name="phoneNumber"></ion-input>
+    </ion-item>
+
+
+    <h5> &nbsp;&nbsp;&nbsp; Upload Documents:</h5>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Driving licence &nbsp;&nbsp;&nbsp;
+            <ion-icon name="camera" (click)="openCamera()"></ion-icon>
+            
+            <img [src]="base64Image" style="width: 12%; height:12% "/> 
+            
+            OR <br>
+            <button ion-button name="camera" (click)="openGallary()">Gallary</button>
+
+    
+
+    <ion-item>
+        <input type="checkbox" name="terms" [(ngModel)]="accept_terms"> I accept the terms of services.
+      </ion-item> 
+  
+    <ion-item>
+        <button ion-button class="login" color="bleu" type="submit" [disabled]="!accept_terms" 
+        full (click)="addItem({name : user.username,password : user.password, emailid: user.emailid,document:this.base64Image } )">Register</button>
+    </ion-item>
+  </form>
+
+  <!-- <button ion-button full (click)="addItem({ name : inputText,password : user.password, emailid: user.emailid} )">Add</button> -->
+
+  <ion-list>
+      <ion-item *ngFor="let item of items">
+        {{item.name}}
+        {{item.password}}
+
+        </ion-item>
+    </ion-list>
+</ion-content>
+<!-- 
+    <ion-list>
+        <ion-item>
+          <ion-label>Gaming</ion-label>
+          <ion-select [(ngModel)]="documents" okText="Okay" cancelText="Dismiss">
+            <ion-option value="nes">Driving licence</ion-option>
+            <ion-option value="n64">Aadhar Card</ion-option>
+            <ion-option value="ps">RC book</ion-option>
+            <ion-option value="genesis">PAN Card</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list> -->

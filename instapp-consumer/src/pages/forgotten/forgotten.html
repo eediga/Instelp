@@ -1,0 +1,60 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>forgotten</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color:aliceblue">
+
+    <form >
+      <ion-item>
+        <ion-label floating>Type Of Product</ion-label>
+        <ion-input type="text" [(ngModel)]="parcel.typeOfProduct" name="type"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Weight of Product (in kg)</ion-label>
+        <ion-input type="text"[(ngModel)]="parcel.weightOfProduct" name="weight" ></ion-input>
+      </ion-item>
+      <br>
+      <ion-list>
+    
+        <ion-item>
+            <ion-label>Size of Product</ion-label>
+            <ion-select [(ngModel)]="parcel.sizeOfProduct" name="size" okText="Okay" cancelText="Dismiss">
+              <ion-option value="small">Small</ion-option>
+              <ion-option value="medium">Medium</ion-option>
+              <ion-option value="large">Large</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list> 
+
+        <button ion-button (click)="SourceAdress()">select source address</button>
+      <ion-item>
+        <ion-label floating  *ngIf="flag">Source Address</ion-label>
+        <ion-input type="text" [(ngModel)]="srcAdress.name" name="srcAddr" > </ion-input>
+      </ion-item>
+      
+      
+      <button ion-button (click)="destinationAddress()">select Destination address</button>
+      <ion-item>
+          <ion-label floating *ngIf="flag1"> Destination Address</ion-label>
+          <ion-input type="text" [(ngModel)]="destAdress.name" name="destAddr" [disabled]></ion-input>
+        </ion-item>
+        
+  <br>
+
+      <ion-item>
+        <input type="checkbox" name="terms" [(ngModel)]="accept_terms"> I accept the terms of services.
+      </ion-item> 
+      
+      <ion-item>
+          <button ion-button class="login" color="bleu" type="submit" [disabled]="!accept_terms" (click)="ForgottenForm()">Place an Order</button>
+        <!-- <button ion-button class="login" color="bleu" type="submit" (click)="register()" [disabled]="!accept_terms">Register</button> -->
+      </ion-item>
+      
+    
+    </form>
+  
+  </ion-content>
+  

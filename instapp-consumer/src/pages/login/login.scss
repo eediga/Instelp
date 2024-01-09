@@ -1,0 +1,73 @@
+page-login {
+
+          .or-label{
+                    text-align: center;
+                }
+                
+.background{
+
+    //ackground-color: rgb(7, 30, 48);
+    //background-image: url(https://i.pinimg.com/564x/ed/24/d3/ed24d37dfad63bbd8fae98435696d303.jpg);
+    padding-right: 10%; 
+    padding-top: 75px;
+     padding-bottom: 50px;    
+     margin-bottom: 20px;
+     background: url('../../assets/imgs/bg.png') no-repeat center center;
+    //  background-image: url('../../assets/imgs/background6.jpg') ;
+    //  background-repeat: no-repeat;
+     background-size: cover;
+
+}  
+.ion-input{
+    border-radius: 0px;
+    background-color: transparent;
+}  
+.styling
+{
+    color: black;
+}
+ion-button{
+    background-color: transparent;
+    
+}        
+// .login
+// {
+//     margin-top:5%;
+//     width: 40%;
+//     color: white;
+//     position: relative;  
+//     overflow:hidden; 
+//     background-color: rgba(2, 2, 2, 0.7); 
+//     // border: 1px solid white;
+// //   border-radius: 5px;
+
+// }    
+.contain{
+    background-color: aqua;
+    
+}
+.login
+{
+    margin-top:70%;
+    width: 100%;
+    color: white;
+    position: relative;  
+    overflow:hidden; 
+    background-color: rgba(2, 2, 2, 0.7); 
+
+}    
+.img{
+    height:220px; 
+    width:220px;
+    overflow:hidden; 
+}
+.center {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    overflow:hidden; 
+  }
+
+}

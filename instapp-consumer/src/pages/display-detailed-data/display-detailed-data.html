@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Menu
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <img src="{{place.value.photo}}" class="image">
+ 
+<ion-list>
+
+    
+    <ion-item *ngFor="let item of items ">
+      <ion-row>
+        <ion-col>
+      <mat-card-header>
+        <mat-card-title>{{item.key}}</mat-card-title>
+        <mat-card-subtitle>Rs. {{item.value}}</mat-card-subtitle>
+      </mat-card-header>
+    </ion-col>
+    
+      <ion-col >
+        <button ion-button color="secondary" outline class="btn" (click)="addTocart(item)" float-right>+</button>
+        <button ion-button color="secondary" outline class="btn" float-right>{{item.quant}}</button>
+        <button ion-button color="secondary" outline class="btn" (click)="decre(item)" float-right>-</button>
+        
+      </ion-col>
+    </ion-row>
+    </ion-item>
+
+    <!-- <ion-item *ngFor="let item of items" >
+        <mat-card>
+          
+          <ion-row>
+            <mat-card-header>
+                <mat-card-title>{{item.key}}</mat-card-title>
+                <mat-card-subtitle>Rs. {{item.value}}</mat-card-subtitle>
+              </mat-card-header>
+              
+              <mat-card-content>
+                <ion-row>
+                  <button ion-button (click)="RemoveFromCart(item)" *ngIf="flag">-</button> 
+                  <h4 *ngIf="flag" >{{product.quantity}}</h4>
+
+                   <button ion-button (click)="addTocart(item)" size="small"> {{buttonName}}</button>
+
+                </ion-row>
+              </mat-card-content>
+          </ion-row>
+        </mat-card>
+    </ion-item> -->
+  </ion-list>
+
+
+</ion-content>
+                  

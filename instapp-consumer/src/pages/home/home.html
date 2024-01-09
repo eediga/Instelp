@@ -1,0 +1,254 @@
+<!-- <ion-header no-border>
+  <ion-navbar color="white" >
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>Home
+    </button>
+  </ion-navbar>
+ 
+</ion-header> -->
+
+<ion-content >
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list *ngIf="flag" >
+    <ion-item *ngFor="let country of countryList">
+      <h2> {{ country.name }} </h2>
+    </ion-item>
+  </ion-list>
+
+  <ion-slides (click)="gotoForgotten()" autoplay="2500" loop="true" speed="500" class="slideionic" style="width: 100%; height:70%; margin-bottom: 20px" >
+      <ion-slide *ngFor="let slide of slides" style="width:50%">
+        <!-- <ion-toolbar
+          <ion-buttons end>
+            <button ion-button color="primary">Skip</button>
+          </ion-buttons>
+        </ion-toolbar> -->
+        <img [src]="slide.image" class="slide-image"/>
+
+      </ion-slide>
+  </ion-slides>
+  <br><br><br><br>
+    <div class="gridList">
+        <mat-grid-list cols="2" rowHeight="3:1.5">
+          <mat-grid-tile (click)="movetonext('restaurant')">
+              <img src="https://ak6.picdn.net/shutterstock/videos/32420266/thumb/1.jpg" 
+                alt="food"  layout-fill>
+        
+          <mat-grid-tile-footer>
+            <div class="footer">
+              <h3>Restaurant</h3>
+            </div>
+          </mat-grid-tile-footer>
+        
+          </mat-grid-tile>
+      
+          <mat-grid-tile (click)="movetonext('grocery')">
+              <img src="https://www.supermarketnews.com/sites/supermarketnews.com/files/styles/article_featured_standard/public/uploads/2016/10/grocerybasket.png?itok=yC6ZoiXD" 
+              alt="grocery"  layout-fill>
+              <mat-grid-tile-footer>
+                  <div class="footer">
+                      <h3>Grocery</h3>
+                    </div>
+              </mat-grid-tile-footer>
+           </mat-grid-tile>
+      
+           <mat-grid-tile (click)="movetonext('medicine')" >
+              <img src="https://images.indianexpress.com/2015/03/medicines-l.jpg" 
+              alt="medicine" layout-fill>
+              <mat-grid-tile-footer>
+                  <div class="footer">
+                      <h3>Medicine</h3>
+                    </div>
+              </mat-grid-tile-footer>
+           </mat-grid-tile>
+      
+           <mat-grid-tile (click)="movetonext('stationary')">
+              <img src="https://ak7.picdn.net/shutterstock/videos/12103187/thumb/1.jpg" 
+              alt="stationary"  layout-fill>
+              <mat-grid-tile-footer>
+                  <div class="footer">
+                      <h3>Stationary</h3>
+                    </div>
+              </mat-grid-tile-footer>
+           </mat-grid-tile>
+          
+        </mat-grid-list>
+      </div>
+      <br><br><br>
+      <!-- <div class="scrolling-wrapper">
+          <div>
+        
+        <div class="card" (click)="goDirectlyToMenuRestaurant()">
+          <img src="../../assets/imgs/photo3.jpg" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>Kimaya Hotel</b></h4> 
+            <p>Kothrud, Pune</p> 
+          </div>
+        </div>
+        <div class="card">
+          <img src="../../assets/imgs/photo3.jpg" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>Prithvi Hotel</b></h4> 
+            <p>Karvenagar, Pune</p> 
+          </div>
+        </div>
+        <div class="card">
+          <img src="../../assets/imgs/photo3.jpg" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>Prithvi Hotel</b></h4> 
+            <p>Karvenagar, Pune</p> 
+          </div>
+        </div>
+        <div class="card">
+          <img src="../../assets/imgs/photo3.jpg" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>Prithvi Hotel</b></h4> 
+            <p>Karvenagar, Pune</p> 
+          </div>
+        </div>
+        <div class="card">
+          <img src="../../assets/imgs/photo3.jpg" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>Prithvi Hotel</b></h4> 
+            <p>Karvenagar, Pune</p> 
+          </div>
+        </div>
+        <div class="card">
+          <img src="../../assets/imgs/photo3.jpg" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>Prithvi Hotel</b></h4> 
+            <p>Karvenagar, Pune</p> 
+          </div>
+        </div>
+    </div>
+    </div> -->
+<h2>Restaurant near me</h2>
+<br>
+<div class="scrolling-wrapper">
+    <div>
+      <div class="card">
+        <img src="../../assets/imgs/image_same2.jpg" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h4><b>Pruthvi Hotel</b></h4> 
+          <p>Kothrud, Pune</p> 
+        </div>
+      </div>
+      
+  <div class="card">
+    <img src="../../assets/imgs/images_same.jpg" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Kimaya Hotel</b></h4> 
+      <p>Kothrud, Pune</p> 
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="../../assets/imgs/image_same3.jpg" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Sheetal Hotel</b></h4> 
+      <p>Karve Road, Pune</p> 
+    </div>
+  </div>
+  <div class="card">
+    <img src="../../assets/imgs/image_same4.jpg" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Hotel Vaishali</b></h4> 
+      <p>FC Road, Pune</p> 
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="../../assets/imgs/image_same5.jpg" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Hotel Janjira</b></h4> 
+      <p>Kothrud, Pune</p> 
+    </div>
+  </div>
+  
+  </div>
+  </div>
+  <br><br><br>
+  <h2>Grocery store near me</h2>
+  <br>
+  <div class="scrolling-wrapper">
+    <div>
+      <div class="card">
+        <img src="../../assets/imgs/grocery1.jpg" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h4><b>Balaji stores</b></h4> 
+          <p>Karvenagar, Pune</p> 
+        </div>
+      </div>
+      
+  <div class="card">
+    <img src="../../assets/imgs/grocery2.jpg" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Kirti market</b></h4> 
+      <p>Kothrud, Pune</p> 
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="../../assets/imgs/grocery3.jpg" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Govardhan Store</b></h4> 
+      <p>Karvenagar, Pune</p> 
+    </div>
+  </div>
+  <div class="card">
+    <img src="../../assets/imgs/grocery4.jpg" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Ramdev store</b></h4> 
+      <p>Karvenagar, Pune</p> 
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="../../assets/imgs/grocery5.jpg" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>More Market</b></h4> 
+      <p>Shastrinagar, Pune</p> 
+    </div>
+  </div>
+  
+  </div>
+  </div>
+  <br><br><br>
+  <h2>Medical near me</h2><br>
+  <div class="scrolling-wrapper">
+    <div>
+      <div class="card">
+        <img src="../../assets/imgs/medicine4.jpg" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h4><b>Medplus</b></h4> 
+          <p>Sinhagad, Pune</p> 
+        </div>
+      </div>
+      
+  <div class="card">
+    <img src="../../assets/imgs/medicine5.jpg" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Om Medicals</b></h4> 
+      <p>Karvenagar, Pune</p> 
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="../../assets/imgs/medicine6.jpg" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Krishna Medical</b></h4> 
+      <p>Kothrud, Pune</p> 
+    </div>
+  </div>
+  <div class="card">
+    <img src="../../assets/imgs/medicine7.jpg" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><b>Shivpushpa </b></h4> 
+      <p>Paud Rd, Pune</p> 
+    </div>
+  </div>
+  
+  </div>
+  </div>
+  
+  
+</ion-content>

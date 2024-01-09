@@ -1,0 +1,49 @@
+mat-grid-tile {
+          background: rgb(211, 195, 183);
+        }
+        
+    .foodimage {
+        max-width: 100%;
+        height: auto;
+    }
+    .footer {
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 21px;
+    }
+    .example{
+        max-width: 400px;
+      }
+.image {
+    margin-left: 25px;
+}
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  
+}
+.slideionic
+{
+  margin-top:0%;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  display: inline-block;
+  border-radius: 5px;
+  margin-right:20px;
+}
+img {
+  border-radius: 5px 5px 0 0;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 15px;
+}

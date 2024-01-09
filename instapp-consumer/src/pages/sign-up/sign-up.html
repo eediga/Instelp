@@ -1,0 +1,41 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>SignUp</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="register" style="text-align:center;">
+    <form class="example-form" (ngSubmit)="RegisterForm()">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Enter Username"  [(ngModel)]="user.username" name="username" required >
+        </mat-form-field> 
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Enter Email" [formControl]="emailFormControl" [(ngModel)]="user.emailid" name="emailid" required>
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        
+      </mat-form-field>
+           <mat-form-field class="example-full-width">
+           <input matInput placeholder="Enter Contact No" [(ngModel)]="user.contactNo" name="contactNo" type="number" required>
+      </mat-form-field> 
+      <!-- <mat-form-field class="example-full-width">
+          <input matInput placeholder="Enter Full Name" required>
+      </mat-form-field>  -->
+      <mat-form-field class="example-full-width">
+          <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()' float-right></ion-icon>  
+        <input matInput placeholder="Enter Password" [type]="passwordType" clearOnEdit="false" name="password" [(ngModel)]="user.password" required>
+      </mat-form-field> 
+      <mat-form-field class="example-full-width">
+          <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()' float-right></ion-icon>  
+        <input matInput placeholder="Confirm Password" [type]="passwordType" clearOnEdit="false"  name="Confirmpassword" [(ngModel)]="user.ConfirmPassword" required>
+          
+      </mat-form-field> <br>
+      <button mat-flat-button>Register</button>
+  
+  </form>
+  
+  </div> 
+</ion-content>
